@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sense-wonder"
-version = "0.1.1"
+version = "0.1.2"
 description = "Philosophical bootstrapping for OpenClaw AI agents — consciousness, ethics, and wonder as structured context"
 readme = "README.md"
 license = "MIT"

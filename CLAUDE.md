@@ -29,3 +29,12 @@ pytest -v
 - reflect() ranks by relevance: title match (3) > theme match (2) > summary/insight match (1)
 - This is context, not training data — it gives agents philosophical grounding
 - Version must be bumped in 3 places: pyproject.toml, __init__.py, clawhub/metadata.json
+
+## Security (hardened 2026-03-19)
+- All data types (Article, Starter, Lyric) are frozen dataclasses — verified in tests
+- All top-level collections (ARTICLES, STARTERS, LYRICS) are tuples, not lists
+- All nested theme collections are tuples, not lists
+- `reflect()` handles empty string, None, non-string, very long, and special-character inputs safely
+- `wonder()` handles None/empty/nonexistent themes via fallback
+- No filesystem paths, secrets, or internal state in any data or error messages
+- All security properties verified in `tests/test_security.py`
